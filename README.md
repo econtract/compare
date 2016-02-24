@@ -116,6 +116,10 @@ For information regarding all possible parameters and their properties, we kindl
     use Econtract/Compare/CompareService;
 
 
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
+
+
     $compareService = new CompareService();
     $compareService->getProducts(
         array(
