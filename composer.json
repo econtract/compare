@@ -1,7 +1,7 @@
 {
-    "name": "econtract/aanbieders-api",
+    "name": "econtract/compare",
     "description": "E-Contract BVBA API package",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "keywords": ["API", "E-Contract", "Aanbieders"],
     "homepage": "http://aanbieders.be",
     "license": "proprietary",
@@ -31,7 +31,7 @@
 
     "autoload": {
         "psr-0": {
-            "econtract\\Compare\\": "src/"
+            "econtract\\compare\\": "src/"
         }
     },
 

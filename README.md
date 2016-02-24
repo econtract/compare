@@ -14,7 +14,7 @@ Pull this package in through Composer:
 
     {
         "require": {
-            "econtract/compare": "0.*"
+            "econtract/compare": "1.*"
         }
     }
 
@@ -113,11 +113,11 @@ For information regarding all possible parameters and their properties, we kindl
 
     include('vendor/autoload.php');
 
-    use Econtract/Compare/ApiService;
+    use Econtract/Compare/CompareService;
 
 
-    $apiService = new ApiService();
-    $apiService->getProducts(
+    $compareService = new CompareService();
+    $compareService->getProducts(
         array(
             'sg'        => 'consumer',
             'cat'       => 'internet',
