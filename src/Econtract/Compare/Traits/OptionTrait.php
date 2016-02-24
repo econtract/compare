@@ -1,8 +1,8 @@
-<?php namespace Econtract\AanbiedersApi\Traits;
+<?php namespace Econtract\Compare\Traits;
 
 
-use Econtract\AanbiedersApi\Services\Api\OptionServiceProvider;
-use Econtract\AanbiedersApi\Exceptions\AanbiedersApiException;
+use Econtract\Compare\ServiceProviders\OptionServiceProvider;
+use Econtract\Compare\Exceptions\CompareException;
 
 trait OptionTrait {
 
@@ -10,7 +10,7 @@ trait OptionTrait {
      * @param array $params
      * @param array $optionIds
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getOptions($params, $optionIds = array())
     {
@@ -23,7 +23,7 @@ trait OptionTrait {
      * @param array $params
      * @param int $optionId
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getOption($params, $optionId)
     {

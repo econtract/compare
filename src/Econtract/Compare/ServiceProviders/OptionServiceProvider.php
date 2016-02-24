@@ -1,4 +1,4 @@
-<?php namespace Econtract\AanbiedersApi\ServiceProviders;
+<?php namespace Econtract\Compare\ServiceProviders;
 
 
 class OptionServiceProvider extends BaseServiceProvider {

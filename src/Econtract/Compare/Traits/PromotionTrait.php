@@ -1,8 +1,8 @@
-<?php namespace Econtract\AanbiedersApi\Traits;
+<?php namespace Econtract\Compare\Traits;
 
 
-use Econtract\AanbiedersApi\Services\Api\PromotionServiceProvider;
-use Econtract\AanbiedersApi\Exceptions\AanbiedersApiException;
+use Econtract\Compare\ServiceProviders\PromotionServiceProvider;
+use Econtract\Compare\Exceptions\CompareException;
 
 trait PromotionTrait {
 
@@ -10,7 +10,7 @@ trait PromotionTrait {
      * @param array $params
      * @param array $promotionIds
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getPromotions($params, $promotionIds = array())
     {
@@ -23,7 +23,7 @@ trait PromotionTrait {
      * @param array $params
      * @param int $promotionId
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getPromotion($params, $promotionId)
     {

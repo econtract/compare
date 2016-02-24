@@ -1,22 +1,22 @@
-<?php namespace Econtract\AanbiedersApi;
+<?php namespace Econtract\Compare;
 
 
-use Econtract\AanbiedersApi\ServiceProviders\ProductServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\SupplierServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\AffiliateServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\ComparisonServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\PromotionServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\OptionServiceProvider;
-use Econtract\AanbiedersApi\Traits\SupplierTrait;
-use Econtract\AanbiedersApi\Traits\ProductTrait;
-use Econtract\AanbiedersApi\Traits\AffiliateTrait;
-use Econtract\AanbiedersApi\Traits\ComparisonTrait;
-use Econtract\AanbiedersApi\Traits\OptionTrait;
-use Econtract\AanbiedersApi\Traits\PromotionTrait;
+use Econtract\Compare\ServiceProviders\ProductServiceProvider;
+use Econtract\Compare\ServiceProviders\SupplierServiceProvider;
+use Econtract\Compare\ServiceProviders\AffiliateServiceProvider;
+use Econtract\Compare\ServiceProviders\ComparisonServiceProvider;
+use Econtract\Compare\ServiceProviders\PromotionServiceProvider;
+use Econtract\Compare\ServiceProviders\OptionServiceProvider;
+use Econtract\Compare\Traits\SupplierTrait;
+use Econtract\Compare\Traits\ProductTrait;
+use Econtract\Compare\Traits\AffiliateTrait;
+use Econtract\Compare\Traits\ComparisonTrait;
+use Econtract\Compare\Traits\OptionTrait;
+use Econtract\Compare\Traits\PromotionTrait;
 
-use Aanbieders\Api\Exceptions\AanbiedersApiException;
+use Econtract\Compare\Exceptions\CompareException;
 
-class ApiService {
+class CompareService {
 
     use ProductTrait, SupplierTrait, AffiliateTrait, ComparisonTrait, OptionTrait, PromotionTrait;
 
@@ -54,7 +54,7 @@ class ApiService {
     /**
      * @param $response
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     protected function returnIfSuccessful($response)
     {
@@ -63,7 +63,7 @@ class ApiService {
         }
 
         if( strpos($response, 'Api error') !== false || strpos($response, 'is required') !== false ) {
-            throw new AanbiedersApiException($response);
+            throw new CompareException($response);
         }
 
         return $response;

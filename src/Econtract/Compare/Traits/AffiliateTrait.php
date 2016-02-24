@@ -1,8 +1,8 @@
-<?php namespace Econtract\AanbiedersApi\Traits;
+<?php namespace Econtract\Compare\Traits;
 
 
-use Econtract\AanbiedersApi\ServiceProviders\AffiliateServiceProvider;
-use Econtract\AanbiedersApi\Exceptions\AanbiedersApiException;
+use Econtract\Compare\ServiceProviders\AffiliateServiceProvider;
+use Econtract\Compare\Exceptions\CompareException;
 
 trait AffiliateTrait {
 
@@ -10,7 +10,7 @@ trait AffiliateTrait {
      * @param array $params
      * @param array $affiliateIds
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getAffiliates($params, $affiliateIds = array())
     {
@@ -23,7 +23,7 @@ trait AffiliateTrait {
      * @param array $params
      * @param int $affiliateId
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getAffiliate($params, $affiliateId)
     {

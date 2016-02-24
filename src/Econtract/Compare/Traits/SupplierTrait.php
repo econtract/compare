@@ -1,8 +1,8 @@
-<?php namespace Econtract\AanbiedersApi\Traits;
+<?php namespace Econtract\Compare\Traits;
 
 
-use Econtract\AanbiedersApi\Services\Api\SupplierServiceProvider;
-use Econtract\AanbiedersApi\Exceptions\AanbiedersApiException;
+use Econtract\Compare\ServiceProviders\SupplierServiceProvider;
+use Econtract\Compare\Exceptions\CompareException;
 
 trait SupplierTrait {
 
@@ -10,7 +10,7 @@ trait SupplierTrait {
      * @param array $params
      * @param array $supplierIds
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getSuppliers($params, $supplierIds = array())
     {
@@ -23,7 +23,7 @@ trait SupplierTrait {
      * @param array $params
      * @param int $supplierId
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getSupplier($params, $supplierId)
     {

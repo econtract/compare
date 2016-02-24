@@ -1,7 +1,7 @@
-E-Contract BVBA - Aanbieders API package
+E-Contract BVBA - Compare package
 =============================================
 
-This package offers the Laravel integration of the Aanbieders.be comparison collection API. This API can be used by partners and affiliates of Aanbieders to leverage information from the Aanbieders comparison calculation engine on their own websites.
+This package offers the integration of the Aanbieders.be comparison collection API. This API can be used by partners and affiliates of Aanbieders to leverage information from the Aanbieders comparison calculation engine on their own websites.
 
 
 
@@ -14,7 +14,7 @@ Pull this package in through Composer:
 
     {
         "require": {
-            "econtract/aanbieders-api": "0.*"
+            "econtract/compare": "0.*"
         }
     }
 
@@ -42,7 +42,7 @@ Add the service provider to your `config/app.php` file:
     'providers'             => array(
 
         //...
-        \Econtract\AanbiedersApi\AanbiedersApiServiceProvider::class,
+        \Econtract\Compare\CompareServiceProvider::class,
 
     )
 
@@ -55,7 +55,7 @@ Add the API as an alias to your `config/app.php` file
     'facades'               => array(
 
         //...
-        'Api'                   => \Econtract\AanbiedersApi\Facades\AanbiedersApi::class,
+        'Api'                   => \Econtract\Compare\Facades\Compare::class,
 
     ),
 
@@ -113,7 +113,7 @@ For information regarding all possible parameters and their properties, we kindl
 
     include('vendor/autoload.php');
 
-    use Econtract/AanbiedersApi/ApiService;
+    use Econtract/Compare/ApiService;
 
 
     $apiService = new ApiService();

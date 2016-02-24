@@ -1,15 +1,15 @@
-<?php namespace Econtract\AanbiedersApi\Traits;
+<?php namespace Econtract\Compare\Traits;
 
 
-use Econtract\AanbiedersApi\ServiceProviders\ComparisonServiceProvider;
-use Econtract\AanbiedersApi\Exceptions\AanbiedersApiException;
+use Econtract\Compare\ServiceProviders\ComparisonServiceProvider;
+use Econtract\Compare\Exceptions\CompareException;
 
 trait ComparisonTrait {
 
     /**
      * @param array $params
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function getComparisons($params)
     {
@@ -22,7 +22,7 @@ trait ComparisonTrait {
      * @param array $params
      * @param int $comparisonId
      * @return \stdClass
-     * @throws AanbiedersApiException
+     * @throws CompareException
      */
     public function readComparison($params, $comparisonId)
     {

@@ -1,16 +1,16 @@
-<?php namespace Econtract\AanbiedersApi\Facades;
+<?php namespace Econtract\Compare\Facades;
 
 
 use Illuminate\Support\Facades\Facade;
 
-class AanbiedersApi extends Facade {
+class Compare extends Facade {
 
     /**
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'AanbiedersApi';
+        return 'Compare';
     }
 
 }

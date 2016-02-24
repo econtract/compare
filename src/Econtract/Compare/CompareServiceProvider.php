@@ -1,15 +1,15 @@
-<?php namespace Econtract\AanbiedersApi;
+<?php namespace Econtract\Compare;
 
 
 use Illuminate\Support\ServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\ProductServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\SupplierServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\AffiliateServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\ComparisonServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\OptionServiceProvider;
-use Econtract\AanbiedersApi\ServiceProviders\PromotionServiceProvider;
+use Econtract\Compare\ServiceProviders\ProductServiceProvider;
+use Econtract\Compare\ServiceProviders\SupplierServiceProvider;
+use Econtract\Compare\ServiceProviders\AffiliateServiceProvider;
+use Econtract\Compare\ServiceProviders\ComparisonServiceProvider;
+use Econtract\Compare\ServiceProviders\OptionServiceProvider;
+use Econtract\Compare\ServiceProviders\PromotionServiceProvider;
 
-class AanbiedersApiServiceProvider extends ServiceProvider {
+class CompareServiceProvider extends ServiceProvider {
 
     protected $defer = false;
 
@@ -31,7 +31,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerProductServiceProvider()
     {
-        $this->app['AanbiedersApi.product'] = $this->app->share(
+        $this->app['Compare.product'] = $this->app->share(
             function($app)
             {
                 return new ProductServiceProvider();
@@ -41,7 +41,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerSupplierServiceProvider()
     {
-        $this->app['AanbiedersApi.supplier'] = $this->app->share(
+        $this->app['Compare.supplier'] = $this->app->share(
             function($app)
             {
                 return new SupplierServiceProvider();
@@ -51,7 +51,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerAffiliateServiceProvider()
     {
-        $this->app['AanbiedersApi.affiliate'] = $this->app->share(
+        $this->app['Compare.affiliate'] = $this->app->share(
             function($app)
             {
                 return new AffiliateServiceProvider();
@@ -61,7 +61,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerComparisonServiceProvider()
     {
-        $this->app['AanbiedersApi.comparison'] = $this->app->share(
+        $this->app['Compare.comparison'] = $this->app->share(
             function($app)
             {
                 return new ComparisonServiceProvider();
@@ -71,7 +71,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerOptionServiceProvider()
     {
-        $this->app['AanbiedersApi.option'] = $this->app->share(
+        $this->app['Compare.option'] = $this->app->share(
             function($app)
             {
                 return new OptionServiceProvider();
@@ -81,7 +81,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerPromotionServiceProvider()
     {
-        $this->app['AanbiedersApi.promotion'] = $this->app->share(
+        $this->app['Compare.promotion'] = $this->app->share(
             function($app)
             {
                 return new PromotionServiceProvider();
@@ -91,16 +91,16 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
 
     protected function registerApiService()
     {
-        $this->app['AanbiedersApi'] = $this->app->share(
+        $this->app['Compare'] = $this->app->share(
             function($app)
             {
-                return new ApiService(
-                    $app['AanbiedersApi.product'],
-                    $app['AanbiedersApi.supplier'],
-                    $app['AanbiedersApi.affiliate'],
-                    $app['AanbiedersApi.comparison'],
-                    $app['AanbiedersApi.option'],
-                    $app['AanbiedersApi.promotion']
+                return new CompareService(
+                    $app['Compare.product'],
+                    $app['Compare.supplier'],
+                    $app['Compare.affiliate'],
+                    $app['Compare.comparison'],
+                    $app['Compare.option'],
+                    $app['Compare.promotion']
                 );
             }
         );
@@ -111,7 +111,7 @@ class AanbiedersApiServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-        return array('AanbiedersApi');
+        return array('Compare');
     }
 
     public function boot()

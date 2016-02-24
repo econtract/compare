@@ -1,7 +1,8 @@
-<?php namespace Econtract\AanbiedersApi\ServiceProviders;
+<?php namespace Econtract\Compare\ServiceProviders;
 
 
 use Ixudra\Curl\CurlService;
+use Aanbieders;
 
 class BaseServiceProvider {
 
@@ -21,7 +22,7 @@ class BaseServiceProvider {
             $isStaging = true;
         }
 
-        $this->apiClient = new \Aanbieders(
+        $this->apiClient = new Aanbieders(
             array(
                 'key'           => $_SERVER[ 'API_key' ],
                 'secret'        => $_SERVER[ 'API_secret' ],
