@@ -1,7 +1,7 @@
 {
     "name": "econtract/compare",
     "description": "E-Contract BVBA comparison API package",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "keywords": ["API", "E-Contract", "Aanbieders"],
     "homepage": "http://aanbieders.be",
     "license": "proprietary",

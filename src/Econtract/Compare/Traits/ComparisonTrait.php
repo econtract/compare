@@ -11,23 +11,23 @@ trait ComparisonTrait {
      * @return \stdClass
      * @throws CompareException
      */
-    public function getComparisons($params)
+    public function createComparison($params)
     {
         return $this->returnIfSuccessful(
-            $this->getApiComparisonServiceProvider()->getComparisons($params)
+            $this->getApiComparisonServiceProvider()->createComparison($params)
         );
     }
 
     /**
-     * @param array $params
      * @param int $comparisonId
+     * @param array $params
      * @return \stdClass
      * @throws CompareException
      */
-    public function readComparison($params, $comparisonId)
+    public function getComparisonParameters($comparisonId, $params = array())
     {
         return $this->returnIfSuccessful(
-            $this->getApiComparisonServiceProvider()->readComparison($params, $comparisonId)
+            $this->getApiComparisonServiceProvider()->getComparisonParameters($comparisonId, $params)
         );
     }
 
