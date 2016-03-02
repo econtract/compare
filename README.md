@@ -89,7 +89,7 @@ You can access the API using the alias you have selected in your `config/app.php
         )
     );
 
-    $comparisons = Api::getComparisons(
+    $comparisons = Api::createComparison(
         array(
             'sg'        => 'consumer',
             'cat'       => 'gas',
