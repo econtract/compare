@@ -1,7 +1,7 @@
 {
     "name": "econtract/compare",
     "description": "E-Contract BVBA comparison API package",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "keywords": ["API", "E-Contract", "Aanbieders"],
     "homepage": "http://aanbieders.be",
     "license": "proprietary",
@@ -20,7 +20,7 @@
     "require": {
         "php": ">=5.6.0",
         "illuminate/support": "~5.1",
-        "everto/aanbieders-api-client": "0.1.*",
+        "everto/aanbieders-api-client": "0.2.*",
         "ixudra/curl": "~6.0",
         "vlucas/phpdotenv": "~1.0"
     },

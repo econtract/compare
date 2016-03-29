@@ -7,18 +7,20 @@ use Econtract\Compare\ServiceProviders\AffiliateServiceProvider;
 use Econtract\Compare\ServiceProviders\ComparisonServiceProvider;
 use Econtract\Compare\ServiceProviders\PromotionServiceProvider;
 use Econtract\Compare\ServiceProviders\OptionServiceProvider;
+use Econtract\Compare\ServiceProviders\DualFuelServiceProvider;
 use Econtract\Compare\Traits\SupplierTrait;
 use Econtract\Compare\Traits\ProductTrait;
 use Econtract\Compare\Traits\AffiliateTrait;
 use Econtract\Compare\Traits\ComparisonTrait;
 use Econtract\Compare\Traits\OptionTrait;
 use Econtract\Compare\Traits\PromotionTrait;
+use Econtract\Compare\Traits\DualFuelTrait;
 
 use Econtract\Compare\Exceptions\CompareException;
 
 class CompareService {
 
-    use ProductTrait, SupplierTrait, AffiliateTrait, ComparisonTrait, OptionTrait, PromotionTrait;
+    use ProductTrait, SupplierTrait, AffiliateTrait, ComparisonTrait, OptionTrait, PromotionTrait, DualFuelTrait;
 
 
     /** @var ProductServiceProvider $productServiceProvider */
@@ -39,8 +41,11 @@ class CompareService {
     /** @var OptionServiceProvider $optionServiceProvider */
     protected $optionServiceProvider = null;
 
+    /** @var DualFuelServiceProvider $dualFuelServiceProvider */
+    protected $dualFuelServiceProvider = null;
 
-    public function __construct($productServiceProvider = null, $supplierServiceProvider = null, $affiliateServiceProvider = null, $comparisonServiceProvider = null, $optionServiceProvider = null, $promotionServiceProvider = null)
+
+    public function __construct($productServiceProvider = null, $supplierServiceProvider = null, $affiliateServiceProvider = null, $comparisonServiceProvider = null, $optionServiceProvider = null, $promotionServiceProvider = null, $dualFuelServiceProvider = null)
     {
         $this->productServiceProvider = $productServiceProvider;
         $this->supplierServiceProvider = $supplierServiceProvider;
@@ -48,6 +53,7 @@ class CompareService {
         $this->comparisonServiceProvider = $comparisonServiceProvider;
         $this->promotionServiceProvider = $promotionServiceProvider;
         $this->optionServiceProvider = $optionServiceProvider;
+        $this->dualFuelServiceProvider = $dualFuelServiceProvider;
     }
 
 
