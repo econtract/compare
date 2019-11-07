@@ -1,16 +1,12 @@
 {
     "name": "econtract/compare",
     "description": "E-Contract BVBA comparison API package",
-    "version": "2.1.2",
+    "version": "2.2.0",
     "keywords": ["API", "E-Contract", "Aanbieders"],
     "homepage": "http://aanbieders.be",
     "license": "proprietary",
 
     "authors": [
-        {
-            "name": "Evert Engelen",
-            "email": "evert@aanbieders.be"
-        },
         {
             "name": "Jan Oris",
             "email": "jan.oris@ixudra.be"
@@ -20,7 +16,7 @@
     "require": {
         "php": ">=5.6.0",
         "illuminate/support": "~5.1",
-        "everto/aanbieders-api-client": "~0.3",
+        "everto/aanbieders-api-client": "~0.5",
         "ixudra/curl": "~6.0",
         "vlucas/phpdotenv": "~2.0"
     },

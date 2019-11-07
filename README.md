@@ -25,6 +25,7 @@ Next, you will need to add several values to your `.env` file:
 ```
 
     API_staging=false                       // Is this a staging server?
+    API_host=your_secret_api_key            // API host
     API_key=your_public_api_key             // Public API key
     API_secret=your_secret_api_key          // Private API key
 
@@ -125,7 +126,7 @@ For information regarding all possible parameters and their properties, we kindl
         array(
             'sg'        => 'consumer',
             'cat'       => 'internet',
-            'lang'      => 'nl'
+            'lang'      => 'nl',
         )
     );
 
@@ -143,9 +144,10 @@ This package is proprietary software and may not be copied or redistributed with
 
 ## Contact
 
-Evert Engelen (owner)
+Charles Dekkers (owner)
 
-- Email: evert@aanbieders.be
+- Email: charles@aanbieders.be
+- Telephone: ‭+32 497 50 49 08
 
 
 Jan Oris (developer)

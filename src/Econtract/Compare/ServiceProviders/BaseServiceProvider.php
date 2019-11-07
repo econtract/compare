@@ -26,6 +26,7 @@ class BaseServiceProvider {
             array(
                 'key'           => $_SERVER[ 'API_key' ],
                 'secret'        => $_SERVER[ 'API_secret' ],
+                'host'          => $_SERVER[ 'API_host' ],
                 'staging'       => $isStaging
             )
         );
