@@ -14,7 +14,7 @@ Pull this package in through Composer:
 
     {
         "require": {
-            "econtract/compare": "2.*"
+            "econtract/compare": "3.*"
         }
     }
 

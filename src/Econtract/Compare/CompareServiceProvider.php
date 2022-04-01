@@ -31,9 +31,9 @@ class CompareServiceProvider extends ServiceProvider {
 
     protected function registerProductServiceProvider()
     {
-        $this->app['Compare.product'] = $this->app->share(
-            function($app)
-            {
+        $this->app->singleton(
+            'Compare.product',
+            function($app) {
                 return new ProductServiceProvider();
             }
         );
@@ -41,68 +41,68 @@ class CompareServiceProvider extends ServiceProvider {
 
     protected function registerSupplierServiceProvider()
     {
-        $this->app['Compare.supplier'] = $this->app->share(
-            function($app)
-            {
-                return new SupplierServiceProvider();
-            }
+         $this->app->singleton(
+             'Compare.supplier',
+             function($app) {
+                 return new SupplierServiceProvider();
+             }
         );
     }
 
     protected function registerAffiliateServiceProvider()
     {
-        $this->app['Compare.affiliate'] = $this->app->share(
-            function($app)
-            {
-                return new AffiliateServiceProvider();
-            }
+         $this->app->singleton(
+             'Compare.affiliate',
+             function($app) {
+                 return new AffiliateServiceProvider();
+             }
         );
     }
 
     protected function registerComparisonServiceProvider()
     {
-        $this->app['Compare.comparison'] = $this->app->share(
-            function($app)
-            {
-                return new ComparisonServiceProvider();
-            }
+         $this->app->singleton(
+             'Compare.comparison',
+             function($app) {
+                 return new ComparisonServiceProvider();
+             }
         );
     }
 
     protected function registerOptionServiceProvider()
     {
-        $this->app['Compare.option'] = $this->app->share(
-            function($app)
-            {
-                return new OptionServiceProvider();
-            }
+         $this->app->singleton(
+             'Compare.option',
+             function($app) {
+                 return new OptionServiceProvider();
+             }
         );
     }
 
     protected function registerPromotionServiceProvider()
     {
-        $this->app['Compare.promotion'] = $this->app->share(
-            function($app)
-            {
-                return new PromotionServiceProvider();
-            }
+         $this->app->singleton(
+             'Compare.promotion',
+             function($app) {
+                 return new PromotionServiceProvider();
+             }
         );
     }
 
     protected function registerApiService()
     {
-        $this->app['Compare'] = $this->app->share(
-            function($app)
-            {
-                return new CompareService(
-                    $app['Compare.product'],
-                    $app['Compare.supplier'],
-                    $app['Compare.affiliate'],
-                    $app['Compare.comparison'],
-                    $app['Compare.option'],
-                    $app['Compare.promotion']
-                );
-            }
+         $this->app->singleton(
+             'Compare',
+             function($app) {
+                 return new CompareService(
+                     $app[ 'Compare.product' ],
+                     $app[ 'Compare.supplier' ],
+                     $app[ 'Compare.affiliate' ],
+                     $app[ 'Compare.comparison' ],
+                     $app[ 'Compare.option' ],
+                     $app[ 'Compare.promotion' ]
+                 );
+             }
         );
     }
 
