@@ -18,7 +18,7 @@
         "illuminate/support": ">=6.0",
         "everto/aanbieders-api-client": "~0.5",
         "ixudra/curl": "~6.0",
-        "vlucas/phpdotenv": "~2.0"
+        "vlucas/phpdotenv": "^5.2"
     },
 
     "require-dev": {
