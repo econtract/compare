@@ -17,17 +17,12 @@ class BaseServiceProvider {
 
     protected function getApiClient()
     {
-        $isStaging = false;
-        if( $_SERVER[ 'API_staging' ] === 'true' ) {
-            $isStaging = true;
-        }
-
         $this->apiClient = new Aanbieders(
             array(
-                'key'           => $_SERVER[ 'API_key' ],
-                'secret'        => $_SERVER[ 'API_secret' ],
-                'host'          => $_SERVER[ 'API_host' ],
-                'staging'       => $isStaging
+                'key'           => config('econtract.key'),
+                'secret'        => config('econtract.secret'),
+                'host'          => config('econtract.host'),
+                'staging'       => config('econtract.staging'),
             )
         );
 
