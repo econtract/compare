@@ -147,7 +147,7 @@ This package is proprietary software and may not be copied or redistributed with
 Charles Dekkers (owner)
 
 - Email: charles@aanbieders.be
-- Telephone: ‭+32 497 50 49 08
+- Telephone: +32 497 50 49 08
 
 
 Jan Oris (developer)
